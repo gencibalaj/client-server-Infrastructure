@@ -38,15 +38,14 @@ soketa=socket(AF_INET, SOCK_DGRAM)
 
 
 while 1:
-    var=input("Shkurani metoden :")
+    var=input("Shkruani metoden :")
     if(var != "EXIT"):
-		soketa.sendto(str.encode(var),(servername,port))
-		pergjigja, addr=soketa.recvfrom(1024)
-		print(pergjigja.decode())
+	soketa.sendto(str.encode(var),(servername,port))
+	pergjigja,addr=soketa.recvfrom(1024)
+	print(pergjigja.decode())
     else:
     	soketa.close()
     	ndalja= "Programi ndaloi!"
     	sys.exit(ndalja)
-
-soketa.close()
+    soketa.close()
 
